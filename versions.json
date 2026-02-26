@@ -19,10 +19,10 @@
                 }
         },
         {
-                "version": "3.0.4",
+                "version": "3.0.5",
                 "files": {
-                        "fca-unofficial": "fix",
-                        "update": "fix"
+                        "fca-unofficial/src/api/messaging/setMessageReaction.js": "fix",
+                        "update.js": "fix"
                 }
         }
 
