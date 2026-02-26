@@ -32,9 +32,9 @@
   },
   "autogit": {
     "enable": false,
-    "GITHUB_TOKEN": "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",
-    "owner": "noobcore404",
-    "repo": "NooCore-v3-Bot",
+    "GITHUB_TOKEN": "you_github_token",
+    "owner": "your_githb_username",
+    "repo": "your_fork_name",
     "branch": "main",
     "interval": 60,
     "notes": "github bot running use false..... [ render, vercel, railway, cyclic heruku, koyeb ] bot running use true...interval is 60 = 1minute auto GitHub push"
@@ -43,41 +43,29 @@
     "2177252409470039"
   ],
   "adminBot": [
-    "100077764623961",
-    "100004924009085",
-    "61558762813083",
-    "61585772322631"
+    "100077764623961"
   ],
   "creator": [
-    "61565898444113",
-    "100001611578438",
-    "61553004827618",
-    "61573725567297",
-    "61578106881179",
-    "100000583675367",
-    "100077764623961",
-    "61558762813083",
-    "61585772322631",
-    "100004924009085"
+    "61565898444113"
   ],
   "whiteListMode": {
     "enable": false,
     "whiteListIds": [
-      "100000583675367"
+      ""
     ],
     "notes": "if you enable this feature, only the ids in the whiteListIds list can use the bot"
   },
   "whiteListModeThread": {
     "enable": false,
     "whiteListThreadIds": [
-      "24942057872136128"
+      ""
     ],
     "notes": "if you enable this feature, only the thread in the whiteListThreadIds list can use the bot",
     "how_it_work": "if you enable both whiteListMode and whiteListModeThread, the system will check if the user is in whiteListIds, then check if the thread is in whiteListThreadIds, if one of the conditions is true, the user can use the bot"
   },
   "database": {
-    "type": "mongodb",
-    "uriMongodb": "mongodb+srv://saimx69x:saim1235@rawtext.4cvudfo.mongodb.net/rawtextdb?retryWrites=true&w=majority&appName=RawText",
+    "type": "sqlite",
+    "uriMongodb": "",
     "autoSyncWhenStart": false,
     "autoRefreshThreadInfoFirstTime": false,
     "notes": "(1) type selects 'json' or 'sqlite' or 'mongodb'. If you choose mongodb, enter uri connect mongodb in the uriMongodb section, instructions to get uri connect mongodb at: https://youtu.be/z1f9urHW5xY. I recommend using 'mongodb' or 'sqlite', json is not recommended because it is not stable. (2) when you set autoSyncWhenStart to true, the bot will automatically synchronize the data in the database when starting the bot, this will make the bot start slower. (3) when you set autoRefreshThreadInfoFirstTime to true, the bot will automatically refresh the thread information when get first message from the thread since starting the bot"

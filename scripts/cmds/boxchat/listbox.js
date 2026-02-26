@@ -7,13 +7,12 @@ const sendPage = async (
   author
 ) => {
 
-  const totalPages = Math.ceil(groups.length / perPage);
+  const totalPages = Math.ceil(groups.length / perPage) || 1;
 
   if (page < 1) page = 1;
   if (page > totalPages) page = totalPages;
 
   const start = (page - 1) * perPage;
-
   const list = groups.slice(start, start + perPage);
 
   const msg = list.map((g, i) => {
@@ -54,8 +53,7 @@ ${msg}
     author,
     groups,
     page,
-    perPage,
-    messageID: info.messageID
+    perPage
   });
 };
 
@@ -97,16 +95,15 @@ module.exports = {
 
   ncReply: async function ({ api, event, Reply }) {
 
-    if (
-      !event.messageReply ||
-      event.messageReply.messageID !== Reply.messageID
-    ) return;
-
     if (event.senderID !== Reply.author) return;
 
     const text = event.body.trim().toLowerCase();
 
     if (text === "next") {
+
+      const totalPages = Math.ceil(Reply.groups.length / Reply.perPage) || 1;
+      if (Reply.page >= totalPages) return;
+
       return sendPage(
         api,
         event,
@@ -118,6 +115,9 @@ module.exports = {
     }
 
     if (text === "prev") {
+
+      if (Reply.page <= 1) return;
+
       return sendPage(
         api,
         event,
@@ -130,25 +130,18 @@ module.exports = {
 
     if (text.startsWith("leave")) {
 
-      const num = parseInt(
-        text.split(" ")[1]
-      );
-
+      const num = parseInt(text.split(" ")[1]);
       if (isNaN(num)) return;
 
       const index = num - 1;
 
-      if (
-        index < 0 ||
-        index >= Reply.groups.length
-      )
+      if (index < 0 || index >= Reply.groups.length)
         return api.sendMessage(
           "❌ Invalid number",
           event.threadID
         );
 
-      const group =
-        Reply.groups[index];
+      const group = Reply.groups[index];
 
       await api.removeUserFromGroup(
         api.getCurrentUserID(),

@@ -17,9 +17,9 @@ module.exports = {
 
   ncStart: async function ({ api, event }) {
     try {
-      const noobcore = "https://raw.githubusercontent.com/noobcore404/NC-STORE/main/NCApiUrl.json";
+      const noobcore = "https://raw.githubusercontent.com/Saim-x69x/sakura/main/ApiUrl.json";
       const apiRes = await axios.get(noobcore);
-      const baseUrl = apiRes.data.apiv1;
+      const baseUrl = apiRes.data.saimx69x;
 
       const res = await axios.get(`${baseUrl}/api/cdp2`);
       const { boy, girl } = res.data;
