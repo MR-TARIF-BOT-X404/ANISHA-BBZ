@@ -1,5 +1,5 @@
 /**
- * Create by Aryan Rayhan
+ * fixed by Aryan Rayhan
  * Don't change credit
  * Send a message using Reaction.
 
