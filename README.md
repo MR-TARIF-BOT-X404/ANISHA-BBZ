@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/gU1MsAW.gif" alt="banner">
+<img src="https://i.ibb.co/1G0K23jj/saimx69x-7ee55e.jpg" alt="banner">
 
 <h1 align="center">
   <img src="./dashboard/images/logo-non-bg.png" width="25px">
